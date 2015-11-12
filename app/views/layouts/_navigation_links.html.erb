@@ -1,1 +1,9 @@
-<%# add navigation links to this file %>
+<%# agrego los links que van a ir en la barraa de navegacion %>
+<% if user_signed_in? %>
+  <li><%= link_to 'Editar Cuenta', edit_user_registration_path %></li>
+  <li><%= link_to 'Salir', destroy_user_session_path, :method=>'delete' %></li>
+<% else %>
+  <li><%= link_to 'Iniciar sesion', new_user_session_path %></li>
+  <li><%= link_to 'Registrarse', new_user_registration_path %> </li>
+
+<% end %>
