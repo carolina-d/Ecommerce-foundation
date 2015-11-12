@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
 
+  belongs_to :brand
+
   validates :name, presence: true, length: {minimum: 10}
   validates :description, presence: true
   validates :price, presence: true, numericality: true

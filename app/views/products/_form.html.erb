@@ -33,6 +33,10 @@
   </div>
 
   <div class="field">
+    <%= f.label :brand_id %><br>
+    <%= f.collection_select :brand_id, Brand.all, :id, :pretty_name %>
+  </div>
+  <div class="field">
     <%= f.file_field :image %>
   </div>
 
