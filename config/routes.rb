@@ -9,7 +9,17 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'welcome#index'
+
+   #rota para cargar las marcas en dropdown
    get 'marca/:brand_id' => 'welcome#brand', as: :home_brand
+
+
+
+
+
+
+
+   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
