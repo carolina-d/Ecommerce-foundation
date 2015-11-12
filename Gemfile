@@ -32,6 +32,9 @@ end
 #gema para el login
 gem 'devise'
 
+#me permite agregar imagenes
+gem 'paperclip'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
