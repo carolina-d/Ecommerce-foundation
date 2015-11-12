@@ -7,3 +7,17 @@
   <li><%= link_to 'Registrarse', new_user_registration_path %> </li>
 
 <% end %>
+   	<ul class="right">	
+		<li class="divider"></li>
+      		<li class="has-dropdown">
+	        		<a href="#">Marcas</a>
+	        	<ul class="dropdown">
+
+	          		<% @brands.each do |brand| %>
+	           			<li> <%= link_to brand.name, home_brand_path(brand_id: brand.id) %></li>
+	          		<% end %>
+	        	</ul>
+      		</li>
+    </ul>
+
+  
