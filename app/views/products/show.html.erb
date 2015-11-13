@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= image_tag @product.image.url(:medium) %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @product.name %>
 </p>
@@ -24,11 +28,26 @@
   <strong>Stock:</strong>
   <%= @product.stock %>
 </p>
-
 <p>
-  <strong>Imagen:</strong>
-  <%= image_tag @product.image.url(:medium) %>
+  <strong>Brand</strong>
+  <% if @product.brand %>
+   <%= @product.brand.name %>
+   <%else%> 
+   <h4>No hay marca registrada</h4>
+ <% end %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
+  <strong>Categorias:</strong>
+  <% if @product.categories.empty? %>
+    No hay categorias asignadas.
+  <% else %>
+    <ul>
+    <% for category in @product.categories %>
+      <li><%= category.name %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</p>
+
+<%= link_to 'Edit',  edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
