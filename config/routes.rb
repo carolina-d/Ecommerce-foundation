@@ -12,9 +12,8 @@ Rails.application.routes.draw do
    root 'welcome#index'
 
    #ruta para cargar las marcas en dropdown
-   get 'marca/:brand_id' => 'welcome#brand', as: :home_brand
-
-   get 'categoria/:category_id' => 'welcome#category', as: :home_category
+  get 'marca/:brand_id' => 'welcome#brand', as: :home_brand
+  get 'categoria/:category_id' => 'welcome#category', as: :home_category
 
   post '/agregar' => 'welcome#add_to_cart', as: :add_to_cart
   post '/quitar' => 'welcome#remove_from_cart', as: :remove_from_cart
@@ -25,7 +24,6 @@ Rails.application.routes.draw do
   get '/payments/success' => 'payments#success', as: :success
   get '/payments/failure' => 'payments#failure', as: :failure
   get '/payments/pending' => 'payments#pending', as: :pending
-
 
 
 

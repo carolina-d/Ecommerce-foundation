@@ -14,7 +14,7 @@
          
              <a href="#">
              <div class="panel callout radius">
-                <h6><%= @products_in_cart.size %> productos en tu carrito.</h6>
+               <h6> <span class="label"><%= @products_in_cart.size %> productos en tu carrito.</span><h6><br>
                  <% if @products_in_cart.any? %>
             <ul>
               <% for product in @products_in_cart %>
@@ -22,7 +22,7 @@
                   [<%= link_to 'X', remove_from_cart_path(id: product.id), method: :post %>]
                   <%= product.name %> - <%= number_to_currency product.price %>
                 </li>
-              <% end %>
+              <% end %><br>
               <li>TOTAL: <b><%= number_to_currency cart_total %></b></li>
             </ul>
             <%= link_to "PAGAR", checkout_path %>
