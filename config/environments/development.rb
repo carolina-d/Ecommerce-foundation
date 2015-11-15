@@ -36,14 +36,15 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+   #configuracion para mercado pago
+  config.after_initialize do
+    Rails.application.routes.default_url_options[:host] = "localhost:3000"
+  end
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
   #configuracion para la gema devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-  #configuracion para mercado pago
-  config.after_initialize do
-    Rails.application.routes.default_url_options[:host] = "localhost:3000"
-  end
+ 
 end
